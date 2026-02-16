@@ -1,0 +1,71 @@
+'use strict';
+
+//Importaciones
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import { corsOptions } from './cors-configuration.js';
+
+//Rutas
+import userRoutes from '../src/users/users.routes.js';
+import publicationRoutes from '../src/publications/publications.routes.js';
+import commentRoutes from '../src/comments/comments.routes.js';
+import { dbConnection } from './db.js';
+
+const BASE_URL = '/gestorOpiniones/v1';
+
+// Configuracion de los middlewares
+const middlewares = (app) => {
+    //Permite recibir datos en formato urlencoded
+    app.use(express.urlencoded({ extended: false, limit: '10mb' }));
+    //Permite recibir datos en formato json
+    app.use(express.json({ limit: '10mb' }));
+    //Permite configurar las cabeceras de las peticiones HTTP
+    app.use(cors(corsOptions));
+    //Permite el uso de morgan en modo desarrollo
+    app.use(morgan('dev'));
+}
+
+//Integracion de todas las rutas
+const routes = (app) => {
+    app.use(`${BASE_URL}/users`, userRoutes);
+    app.use(`${BASE_URL}/publications`, publicationRoutes);
+    app.use(`${BASE_URL}/comments`, commentRoutes);
+}
+
+//funcion para iniciar el servidor
+const initServer = async (app) => {
+    // Crear la instancia de la aplicacion
+    app = express();
+    const PORT = process.env.PORT || 3001;
+
+    try {
+        //Configuracion de los middlewares (Mi aplicaion)
+        dbConnection();
+        middlewares(app);
+        routes(app);
+
+        app.listen(PORT, () => {
+            console.log(`Servidor iniciado en el puerto ${PORT}`);
+            console.log(`URL BASE: http://localhost:${PORT}${BASE_URL}`);
+        });
+
+        // Primera ruta
+        app.get(`${BASE_URL}/prueba`, (req, res) => {
+            res.status(200).json(
+                {
+                    status: 'ok',
+                    service: 'Gestor Opiniones',
+                    version: '1.0.0'
+                }
+            );
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+}
+
+export { initServer };

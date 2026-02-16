@@ -1,0 +1,392 @@
+{
+  "info": {
+    "_postman_id": "a05bda85-58a4-4799-a2e5-f9c7502f8615",
+    "name": "Gestor de Opiniones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48513078",
+    "_collection_link": "https://go.postman.co/collection/48513078-a05bda85-58a4-4799-a2e5-f9c7502f8615?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Users",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Eduardo Migaja\",\r\n  \"email\": \"eduardo.migaja@example.com\",\r\n  \"password\": \"Migaja3mil\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Users",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Marcos Beteta\",\r\n  \"email\": \"marcos.beteta@example.com\",\r\n  \"password\": \"miPasswordSeguro123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/users/6993522b976a4657cbb14393",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "users",
+                "6993522b976a4657cbb14393"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Users",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/users/699352d5976a4657cbb143a1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "users",
+                "699352d5976a4657cbb143a1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Comments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comments",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"¡Excelente publicación! Me ayudó mucho a entender Mongoose.\",\r\n  \"user_id\": \"65df1234567890abcdef1234\",\r\n  \"publication_id\": \"77bc9876543210fedcba4321\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comments",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"He editado mi comentario: Realmente me gustó mucho el post, gracias.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/comments/69935853bc5c0064e5ec70c4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "comments",
+                "69935853bc5c0064e5ec70c4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comments",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"He editado mi comentario: Realmente me gustó mucho el post, gracias.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/comments/69935853bc5c0064e5ec70c4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "comments",
+                "69935853bc5c0064e5ec70c4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Publications",
+      "item": [
+        {
+          "name": "Publications",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/publications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "publications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Publications",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi primera opinión sobre Node.js\",\r\n  \"content\": \"Node.js es increíble para construir APIs rápidas y escalables. Me encanta el ecosistema de npm.\",\r\n  \"user_id\": \"6993522b976a4657cbb14393\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/publications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "publications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Publications",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi opinión actualizada sobre Node.js\",\r\n  \"content\": \"He estado probando Express 5 y las mejoras en el manejo de errores son geniales.\",\r\n  \"user_id\": \"65df1234567890abcdef1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/publications/699355b3a0412904c20c785e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "publications",
+                "699355b3a0412904c20c785e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Publications",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi opinión actualizada sobre Node.js\",\r\n  \"content\": \"He estado probando Express 5 y las mejoras en el manejo de errores son geniales.\",\r\n  \"user_id\": \"65df1234567890abcdef1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestorOpiniones/v1/publications/699355b3a0412904c20c785e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestorOpiniones",
+                "v1",
+                "publications",
+                "699355b3a0412904c20c785e"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
